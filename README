@@ -1,0 +1,26 @@
+required files:
+
+    config/database.config:
+
+      {development, [{database, "testowa1"},
+                     {host,     "localhost"},
+                     {password, ""},
+                     {username, "postgres"}]}.
+
+    db/schema.sql:
+
+      create table ...;
+
+building:
+
+    cd erldb/
+    make
+
+example usage:
+
+    ./erldb drop create schema:load
+
+TODO:
+
+    - add migrations (generate/migrate/rollback) & remove schema:load then
+    - make it driver agnostic (postgresql, sqlite3)
